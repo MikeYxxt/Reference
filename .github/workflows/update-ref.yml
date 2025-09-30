@@ -20,8 +20,8 @@ jobs:
       - name: 修改.env 文件和Readme.md
         run: |
           echo -e 'REF_URL=https://refs.linyuanshi.me/\nREF_LABEL=网站首页' > .env
-          sed '/^## 赞助支持$/,/^## 正在建设中.../ {/^## 正在建设中...$/!d}' README.md > README.md.temp
-          sed '/^## 看到缺少什么了吗？$/,/^## 开发/ {/^## 开发$/!d}' README.md.temp > README.md
+          sed '/^## 赞助支持$/,/^## 正在建设中...$/ {/^## 正在建设中...$/!d}' README.md > README.md.temp
+          sed '/^## 看到缺少什么了吗？$/,/^## 开发$/ {/^## 开发$/!d}' README.md.temp > README.md
           rm README.md.temp
 
       - name: 编译静态文件
